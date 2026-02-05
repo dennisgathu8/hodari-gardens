@@ -2,11 +2,12 @@
 
 [![Clojure](https://img.shields.io/badge/Clojure-1.11-blue.svg?logo=clojure&logoColor=white)](https://clojure.org/)
 [![ClojureScript](https://img.shields.io/badge/ClojureScript-1.11-blue.svg?logo=clojurescript&logoColor=white)](https://clojurescript.org/)
+[![React 18](https://img.shields.io/badge/React-18-61DAFB.svg?logo=react&logoColor=white)](https://react.dev/)
 [![Re-frame](https://img.shields.io/badge/re--frame-1.3.0-orange.svg)](https://day8.github.io/re-frame/)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-3.4-38B2AC.svg?logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
-[![License](https://img.shields.io/badge/License-Private-red.svg)](LICENSE)
+[![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 
-A high-performance, reactive, and accessible digital platform for **Hodari Gardens Resort** in Nakuru, Kenya. This repository implements a full-stack Clojure solution designed for technical excellence, scalability, and an uncompromising user experience.
+A high-performance, reactive, and accessible digital platform for **Hodari Gardens Resort** in Nakuru, Kenya. Built with a modern Clojure/ClojureScript stack, this application leverages **React 18 Concurrent Rendering** and **re-frame** architectural patterns for an uncompromising user experience.
 
 ---
 
@@ -46,21 +47,23 @@ graph TD
 
 ---
 
-## 🚀 Core Pillars
+## 🚀 Technical Highlights
 
-### 1. Technical Excellence
-- **Immutable by Default**: Leveraging Clojure's persistent data structures to eliminate side-effect bugs.
-- **Data-Driven Routing**: Symmetric routing using Bidi (Frontend) and Reitit (Backend).
-- **Reactive State Management**: Implementation of the "6-Layer" re-frame pattern for predictable UI state.
+### 1. Modern UI Engine
+- **React 18 Concurrent Mode**: Migrated to `reagent.dom.client/create-root` for improved rendering performance and future-proofing.
+- **HSL-Based Design System**: Custom tailored color palettes ("Garden Green" & "Resort Gold") implemented via **Tailwind CSS**.
+- **Dark Mode Native**: First-class support for system preferences and manual toggles with smooth transitions.
 
-### 2. Visual & UX Design
-- **10x Engineering Aesthetics**: Modern design system using custom HSL-tailored colors ("Garden Green" & "Resort Gold").
-- **Dark Mode Native**: First-class support for system-pref and manual dark mode toggles.
-- **Motion & Feedback**: Smooth transitions and interactive micro-animations via Tailwind CSS.
+### 2. Full-Stack Performance
+- **Unified Build Pipeline**: Automated Tailwind CSS compilation integrated with Shadow-CLJS advanced compilation.
+- **SPA Fallback Routing**: Robust backend implementation ensuring 404-free page refreshes and direct URL navigation.
+- **Zero-Dependency Data**: Core configuration stored in immutable EDN files for rapid iteration without database overhead.
 
-### 3. Accessibility & SEO
-- **WCAG 2.1 AA Compliant**: Full semantic HTML5 structure, ARIA orchestration, and keyboard navigation.
-- **Edge Performance**: Optimized Shadow-CLJS advanced compilation for <100ms TTI (Time to Interactive).
+### 3. Feature Set
+- **Accommodation Engine**: Dynamic room exploration with multi-currency pricing display.
+- **World Cup 2026 Hub**: Reactive countdown and match schedule filtering system.
+- **Event Orchestration**: Rich media gallery with lazy-loading and lightbox integration.
+- **Inquiry Pipeline**: Validated multi-step form data submission.
 
 ---
 
@@ -70,39 +73,29 @@ graph TD
 | :--- | :--- | :--- |
 | **Backend** | Clojure (JVM) | Core business logic & API orchestration |
 | **Web Server** | Ring + Jetty | High-concurrency HTTP stack |
-| **Frontend** | ClojureScript | Reactive UI logic |
+| **Frontend** | ClojureScript / React 18 | Reactive UI & Concurrent Rendering |
 | **State** | Re-frame | Global state management (interceptors, side-effects) |
 | **Styling** | Tailwind CSS | Utility-first design system |
 | **Routing** | Reitit / Bidi | Bidirectional, data-driven routing |
-| **Build** | Shadow-CLJS | Hot-reloading, NPM integration, & Dead-code elimination |
+| **Build** | Shadow-CLJS / NPM | Hot-reloading & asset optimization |
 
 ---
 
-## 📖 Feature Set
-
-- **Accommodation Engine**: Dynamic room exploration with pricing conversion (KSh/USD).
-- **Dining Portal**: Interactive drink menus and happy hour management.
-- **Event Orchestration**: Package-driven event discovery with rich media gallery.
-- **World Cup 2026 Hub**: Real-time countdown and match schedule filtering.
-- **Inquiry Pipeline**: Robust validation and structured data submission.
-
----
-
-## 🛠 Developer Workflow
+## 📖 Developer Workflow
 
 ### Prerequisites
 - JDK 11+
 - Clojure CLI
-- Node.js 16+ & NPM
+- Node.js 18+ & NPM
 
 ### Environment Setup
 ```bash
 # 1. Install dependencies
 npm install
 
-# 2. Spin up the Dev ecosystem
+# 2. Spin up the ecosystem
 # Terminal A (Backend)
-clj -M:dev -m hodari-gardens.server
+npm run server
 
 # Terminal B (Frontend + Hot Reload)
 npm run dev
@@ -110,29 +103,23 @@ npm run dev
 
 ### Production Build
 ```bash
-# Compile optimized assets and generate Uberjar
+# Unified build compiles CSS and JavaScript
 npm run build
+
+# Generate Backend Uberjar
 clj -T:build uber
 
 # Execution
-java -jar target/hodari-gardens.jar
+java -jar target/hodari-gardens-1.0.0.jar
 ```
-
----
-
-## 🛡 Security & Reliability
-
-- **Stateless API**: Designed for horizontal scaling.
-- **Anti-Forgery Ready**: Structure prepared for CSRF/XSS mitigation.
-- **Malli Validation**: Data-driven schema verification at the API boundary.
 
 ---
 
 ## 📞 Support & Collaboration
 
 For technical inquiries or system architectural discussions:
+- **Project Site**: [hodarigardens.co.ke](https://hodarigardens.co.ke)
 - **Email**: dev@hodarigardens.co.ke
-- **Documentation**: Comprehensive docstrings available in `src/`
 
 ---
 Copyright © 2026 Hodari Gardens Resort. Built with FP excellence.

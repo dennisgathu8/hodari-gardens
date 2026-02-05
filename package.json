@@ -4,7 +4,9 @@
   "description": "Hodari Gardens Resort - Full-Stack Web Application",
   "scripts": {
     "dev": "shadow-cljs watch app",
-    "build": "shadow-cljs release app",
+    "css": "tailwindcss -i src/css/input.css -o resources/public/css/styles.css",
+    "css:watch": "tailwindcss -i src/css/input.css -o resources/public/css/styles.css --watch",
+    "build": "npm run css && shadow-cljs release app",
     "server": "clj -M:dev -m hodari-gardens.server"
   },
   "devDependencies": {
