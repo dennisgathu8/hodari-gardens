@@ -1,0 +1,51 @@
+{:contact
+ {:resort-name "Hodari Gardens Resort"
+  :tagline "Where Luxury Meets Nature"
+  :address {:street "Lanet Road"
+            :area "Nakuru Lanet"
+            :landmark "Near Nakuru Specialist Hospital"
+            :city "Nakuru"
+            :country "Kenya"
+            :postal-code "20100"}
+  :coordinates {:lat -0.3031
+                :lng 36.0800}
+  :phone {:primary "+254 712 345 678"
+          :secondary "+254 733 456 789"
+          :whatsapp "+254 712 345 678"}
+  :email {:general "info@hodarigardens.co.ke"
+          :bookings "bookings@hodarigardens.co.ke"
+          :events "events@hodarigardens.co.ke"}
+  :social-media {:facebook "https://facebook.com/hodarigardens"
+                 :instagram "https://instagram.com/hodarigardens"
+                 :twitter "https://twitter.com/hodarigardens"
+                 :tiktok "https://tiktok.com/@hodarigardens"}
+  :hours {:weekdays "24/7 (Accommodation)"
+          :bar "Monday-Sunday: 10:00 AM - 11:00 PM"
+          :events "By appointment"}
+  :directions
+  ["From Nakuru town center, head towards Lanet on the Nakuru-Nyahururu Road"
+   "Turn right at Nakuru Specialist Hospital"
+   "Continue 500m, Hodari Gardens is on your left"
+   "Approximately 10 minutes from Nakuru CBD"]}
+ 
+ :nearby-attractions
+ [{:name "Nakuru Specialist Hospital"
+   :distance "0.5 km"
+   :type :medical
+   :description "Major medical facility - convenient for medical tourism"}
+  {:name "Lake Nakuru National Park"
+   :distance "8 km"
+   :type :tourism
+   :description "Famous for flamingos and rhino sanctuary"}
+  {:name "Menengai Crater"
+   :distance "12 km"
+   :type :tourism
+   :description "One of the largest volcanic calderas in the world"}
+  {:name "Nakuru Town Center"
+   :distance "5 km"
+   :type :shopping
+   :description "Shopping, dining, and entertainment"}
+  {:name "Hyrax Hill Prehistoric Site"
+   :distance "6 km"
+   :type :tourism
+   :description "Archaeological site and museum"}]}

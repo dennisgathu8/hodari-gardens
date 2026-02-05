@@ -1,0 +1,42 @@
+# Clojure
+.cpcache/
+.nrepl-port
+.rebel_readline_history
+*.class
+*.jar
+*.log
+target/
+pom.xml
+pom.xml.asc
+
+# Shadow-CLJS
+.shadow-cljs/
+node_modules/
+.cache/
+public/js/
+
+# Tailwind
+public/css/output.css
+
+# IDE
+.idea/
+*.iml
+.vscode/
+.calva/
+.lsp/
+.clj-kondo/
+
+# OS
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
+
+# Environment
+.env
+.env.local
+
+# Build artifacts
+out/
+resources/public/js/

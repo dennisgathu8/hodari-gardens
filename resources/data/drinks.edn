@@ -1,0 +1,117 @@
+{:menu
+ {:cocktails
+  [{:id "mojito"
+    :name "Classic Mojito"
+    :description "Fresh mint, lime, white rum, soda water, and sugar"
+    :price {:ksh 650 :usd 5}
+    :image "/assets/images/drinks/mojito.jpg"
+    :popular true}
+   {:id "margarita"
+    :name "Margarita"
+    :description "Tequila, triple sec, lime juice, salt rim"
+    :price {:ksh 700 :usd 5.5}
+    :image "/assets/images/drinks/margarita.jpg"
+    :popular true}
+   {:id "pina-colada"
+    :name "Piña Colada"
+    :description "Rum, coconut cream, pineapple juice"
+    :price {:ksh 750 :usd 6}
+    :image "/assets/images/drinks/pina-colada.jpg"
+    :popular false}
+   {:id "passion-martini"
+    :name "Passion Fruit Martini"
+    :description "Vodka, passion fruit, vanilla, prosecco"
+    :price {:ksh 800 :usd 6.5}
+    :image "/assets/images/drinks/passion-martini.jpg"
+    :popular true}]
+  
+  :beers
+  [{:id "tusker"
+    :name "Tusker Lager"
+    :description "Kenya's premium lager beer"
+    :price {:ksh 300 :usd 2.5}
+    :size "500ml"
+    :image "/assets/images/drinks/tusker.jpg"
+    :popular true}
+   {:id "white-cap"
+    :name "White Cap"
+    :description "Light and refreshing Kenyan beer"
+    :price {:ksh 280 :usd 2.2}
+    :size "500ml"
+    :image "/assets/images/drinks/whitecap.jpg"
+    :popular true}
+   {:id "guinness"
+    :name "Guinness"
+    :description "Rich and creamy stout"
+    :price {:ksh 350 :usd 2.8}
+    :size "500ml"
+    :image "/assets/images/drinks/guinness.jpg"
+    :popular false}
+   {:id "heineken"
+    :name "Heineken"
+    :description "Premium international lager"
+    :price {:ksh 400 :usd 3.2}
+    :size "330ml"
+    :image "/assets/images/drinks/heineken.jpg"
+    :popular false}]
+  
+  :wines
+  [{:id "red-wine"
+    :name "House Red Wine"
+    :description "Smooth and full-bodied red wine"
+    :price {:ksh 450 :usd 3.5}
+    :size "Glass (150ml)"
+    :image "/assets/images/drinks/red-wine.jpg"
+    :popular false}
+   {:id "white-wine"
+    :name "House White Wine"
+    :description "Crisp and refreshing white wine"
+    :price {:ksh 450 :usd 3.5}
+    :size "Glass (150ml)"
+    :image "/assets/images/drinks/white-wine.jpg"
+    :popular false}
+   {:id "rose-wine"
+    :name "Rosé Wine"
+    :description "Light and fruity rosé"
+    :price {:ksh 500 :usd 4}
+    :size "Glass (150ml)"
+    :image "/assets/images/drinks/rose-wine.jpg"
+    :popular false}]
+  
+  :soft-drinks
+  [{:id "fresh-juice"
+    :name "Fresh Fruit Juice"
+    :description "Orange, passion, mango, or mixed"
+    :price {:ksh 250 :usd 2}
+    :image "/assets/images/drinks/juice.jpg"
+    :popular true}
+   {:id "soda"
+    :name "Soft Drinks"
+    :description "Coca-Cola, Fanta, Sprite, Stoney"
+    :price {:ksh 150 :usd 1.2}
+    :size "300ml"
+    :image "/assets/images/drinks/soda.jpg"
+    :popular true}
+   {:id "water"
+    :name "Bottled Water"
+    :description "Still or sparkling"
+    :price {:ksh 100 :usd 0.8}
+    :size "500ml"
+    :image "/assets/images/drinks/water.jpg"
+    :popular false}
+   {:id "coffee"
+    :name "Coffee"
+    :description "Espresso, cappuccino, or latte"
+    :price {:ksh 200 :usd 1.6}
+    :image "/assets/images/drinks/coffee.jpg"
+    :popular true}]}
+ 
+ :happy-hours
+ [{:day "Monday-Friday"
+   :time "17:00 - 19:00"
+   :discount "30% off all cocktails and beers"
+   :active true}
+  {:day "Saturday"
+   :time "15:00 - 18:00"
+   :discount "Buy 2 Get 1 Free on selected drinks"
+   :active true}]}

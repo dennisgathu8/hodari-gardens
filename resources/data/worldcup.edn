@@ -1,0 +1,174 @@
+{:tournament
+ {:name "FIFA World Cup 2026"
+  :hosts ["Canada" "Mexico" "United States"]
+  :start-date "2026-06-11"
+  :end-date "2026-07-19"
+  :total-matches 104
+  :teams 48}
+ 
+ :matches
+ ;; Sample matches for demonstration (Group Stage)
+ [{:id "match-1"
+   :date "2026-06-11"
+   :time "18:00"
+   :stage :group
+   :group "A"
+   :home-team "Mexico"
+   :away-team "TBD"
+   :venue "Estadio Azteca, Mexico City"
+   :featured true}
+  {:id "match-2"
+   :date "2026-06-12"
+   :time "15:00"
+   :stage :group
+   :group "A"
+   :home-team "Canada"
+   :away-team "TBD"
+   :venue "BMO Field, Toronto"
+   :featured true}
+  {:id "match-3"
+   :date "2026-06-12"
+   :time "21:00"
+   :stage :group
+   :group "B"
+   :home-team "United States"
+   :away-team "TBD"
+   :venue "SoFi Stadium, Los Angeles"
+   :featured true}
+  {:id "match-4"
+   :date "2026-06-13"
+   :time "18:00"
+   :stage :group
+   :group "B"
+   :home-team "England"
+   :away-team "TBD"
+   :venue "MetLife Stadium, New York"
+   :featured false}
+  {:id "match-5"
+   :date "2026-06-14"
+   :time "15:00"
+   :stage :group
+   :group "C"
+   :home-team "Argentina"
+   :away-team "TBD"
+   :venue "AT&T Stadium, Dallas"
+   :featured true}
+  {:id "match-6"
+   :date "2026-06-15"
+   :time "18:00"
+   :stage :group
+   :group "D"
+   :home-team "France"
+   :away-team "TBD"
+   :venue "Hard Rock Stadium, Miami"
+   :featured true}
+  {:id "match-7"
+   :date "2026-06-16"
+   :time "21:00"
+   :stage :group
+   :group "E"
+   :home-team "Brazil"
+   :away-team "TBD"
+   :venue "Levi's Stadium, San Francisco"
+   :featured true}
+  {:id "match-8"
+   :date "2026-06-17"
+   :time "15:00"
+   :stage :group
+   :group "F"
+   :home-team "Spain"
+   :away-team "TBD"
+   :venue "Arrowhead Stadium, Kansas City"
+   :featured false}
+  
+  ;; Knockout Stage samples
+  {:id "match-ro16-1"
+   :date "2026-06-27"
+   :time "18:00"
+   :stage :round-of-16
+   :home-team "Winner Group A"
+   :away-team "Runner-up Group B"
+   :venue "TBD"
+   :featured true}
+  {:id "match-qf-1"
+   :date "2026-07-04"
+   :time "18:00"
+   :stage :quarter-final
+   :home-team "TBD"
+   :away-team "TBD"
+   :venue "TBD"
+   :featured true}
+  {:id "match-sf-1"
+   :date "2026-07-14"
+   :time "21:00"
+   :stage :semi-final
+   :home-team "TBD"
+   :away-team "TBD"
+   :venue "AT&T Stadium, Dallas"
+   :featured true}
+  {:id "match-sf-2"
+   :date "2026-07-15"
+   :time "21:00"
+   :stage :semi-final
+   :home-team "TBD"
+   :away-team "TBD"
+   :venue "Mercedes-Benz Stadium, Atlanta"
+   :featured true}
+  {:id "match-final"
+   :date "2026-07-19"
+   :time "18:00"
+   :stage :final
+   :home-team "TBD"
+   :away-team "TBD"
+   :venue "MetLife Stadium, New York"
+   :featured true}]
+ 
+ :viewing-packages
+ [{:id "match-day-basic"
+   :name "Match Day Basic"
+   :description "Watch any match on our big screens with comfortable seating"
+   :price {:ksh 500 :usd 4}
+   :includes ["Reserved seating" "1 soft drink" "Match atmosphere"]
+   :popular false}
+  {:id "match-day-premium"
+   :name "Match Day Premium"
+   :description "Enhanced viewing experience with food and drinks"
+   :price {:ksh 1500 :usd 12}
+   :includes ["Premium seating" "2 beers or cocktails" "Snack platter" "Match jersey giveaway (select matches)"]
+   :popular true}
+  {:id "tournament-pass"
+   :name "Tournament Pass"
+   :description "All-access pass for the entire World Cup tournament"
+   :price {:ksh 25000 :usd 195}
+   :includes ["Reserved seating for all matches" "Unlimited soft drinks" "20% discount on food and alcohol" "Exclusive tournament merchandise" "Priority booking for knockout stages"]
+   :popular false}
+  {:id "final-vip"
+   :name "Final Match VIP"
+   :description "Ultimate experience for the World Cup Final"
+   :price {:ksh 5000 :usd 39}
+   :includes ["VIP seating area" "Open bar (beer and wine)" "Gourmet food buffet" "Official match program" "Commemorative gift"]
+   :popular true}]
+ 
+ :facilities
+ {:screens
+  [{:location "Main Garden Area"
+    :size "150 inches"
+    :capacity 200
+    :features ["4K Ultra HD" "Surround sound" "Weather protection"]}
+   {:location "Bar Lounge"
+    :size "85 inches"
+    :capacity 50
+    :features ["HD" "Sports bar atmosphere" "Indoor comfort"]}
+   {:location "VIP Section"
+    :size "75 inches"
+    :capacity 30
+    :features ["HD" "Private area" "Premium seating"]}]
+  
+  :amenities
+  ["Multiple viewing angles"
+   "Comfortable seating"
+   "Fast food service"
+   "Clean restrooms"
+   "Ample parking"
+   "Security"
+   "First aid station"]}}

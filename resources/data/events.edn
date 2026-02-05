@@ -1,0 +1,81 @@
+{:event-packages
+ [{:id "wedding-standard"
+   :type :wedding
+   :name "Garden Wedding Package"
+   :description "Create your dream wedding in our lush gardens with comprehensive services and elegant setup."
+   :capacity {:min 50 :max 200}
+   :price {:ksh 250000 :usd 1935}
+   :includes ["Garden venue decoration" "White chairs and tables" "Red carpet aisle" "Floral arrangements" "Sound system and DJ" "Catering for guests" "Bridal changing room" "Parking space" "Event coordinator"]
+   :duration "Full day (8 hours)"
+   :images ["/assets/images/events/wedding-1.jpg" "/assets/images/events/wedding-2.jpg" "/assets/images/events/wedding-3.jpg"]
+   :popular true}
+  
+  {:id "wedding-premium"
+   :type :wedding
+   :name "Premium Wedding Package"
+   :description "Luxury wedding experience with premium amenities and personalized service for your special day."
+   :capacity {:min 100 :max 300}
+   :price {:ksh 450000 :usd 3485}
+   :includes ["Premium garden venue decoration" "Chiavari chairs and elegant tables" "Custom floral arrangements" "Professional photography and videography" "Premium sound system and live band option" "Gourmet catering with multiple courses" "Open bar service" "Bridal suite accommodation" "Groom's room" "Valet parking" "Dedicated event planner" "Lighting and effects"]
+   :duration "Full day + evening (12 hours)"
+   :images ["/assets/images/events/wedding-premium-1.jpg" "/assets/images/events/wedding-premium-2.jpg"]
+   :popular true}
+  
+  {:id "corporate-meeting"
+   :type :corporate
+   :name "Corporate Meeting Package"
+   :description "Professional meeting space with modern amenities for productive business gatherings."
+   :capacity {:min 10 :max 50}
+   :price {:ksh 35000 :usd 270}
+   :includes ["Conference room setup" "Projector and screen" "Whiteboard and markers" "High-speed Wi-Fi" "Tea/coffee breaks" "Lunch buffet" "Stationery" "Parking"]
+   :duration "Half day (4 hours)"
+   :images ["/assets/images/events/corporate-1.jpg"]
+   :popular false}
+  
+  {:id "corporate-conference"
+   :type :corporate
+   :name "Corporate Conference Package"
+   :description "Full-scale conference facilities for large corporate events, seminars, and workshops."
+   :capacity {:min 50 :max 150}
+   :price {:ksh 120000 :usd 930}
+   :includes ["Large conference hall" "Stage and podium" "Professional AV equipment" "High-speed Wi-Fi" "Registration desk" "Multiple tea/coffee breaks" "Lunch and dinner buffet" "Branded materials" "Ample parking" "Event support staff"]
+   :duration "Full day (8 hours)"
+   :images ["/assets/images/events/corporate-2.jpg" "/assets/images/events/corporate-3.jpg"]
+   :popular false}
+  
+  {:id "social-party"
+   :type :social
+   :name "Garden Party Package"
+   :description "Perfect for birthdays, anniversaries, and social celebrations in our beautiful garden setting."
+   :capacity {:min 30 :max 100}
+   :price {:ksh 80000 :usd 620}
+   :includes ["Garden venue setup" "Tables and chairs" "Decorations" "Sound system" "Catering service" "Soft drinks and juice" "Parking" "Event attendant"]
+   :duration "6 hours"
+   :images ["/assets/images/events/party-1.jpg" "/assets/images/events/party-2.jpg"]
+   :popular false}]
+ 
+ :gallery
+ [{:id "gallery-1"
+   :url "/assets/images/gallery/event-1.jpg"
+   :alt "Wedding ceremony in the gardens"
+   :category :wedding}
+  {:id "gallery-2"
+   :url "/assets/images/gallery/event-2.jpg"
+   :alt "Corporate conference setup"
+   :category :corporate}
+  {:id "gallery-3"
+   :url "/assets/images/gallery/event-3.jpg"
+   :alt "Garden party celebration"
+   :category :social}
+  {:id "gallery-4"
+   :url "/assets/images/gallery/event-4.jpg"
+   :alt "Evening wedding reception"
+   :category :wedding}
+  {:id "gallery-5"
+   :url "/assets/images/gallery/event-5.jpg"
+   :alt "Garden venue overview"
+   :category :venue}
+  {:id "gallery-6"
+   :url "/assets/images/gallery/event-6.jpg"
+   :alt "Decorated event space"
+   :category :venue}]}
