@@ -1,6 +1,11 @@
 (ns hodari-gardens.server
-  "Main server namespace for Hodari Gardens Resort backend.
-   Handles HTTP routing, API endpoints, and serves static assets."
+  "Production-ready backend server for Hodari Gardens Resort.
+   
+   Features:
+   - Reitit-powered REST API
+   - Re-frame compatible JSON serialization
+   - Fallback routing for Single Page Application (SPA)
+   - Static resource serving from public/ directory"
   (:require [ring.adapter.jetty :refer [run-jetty]]
             [ring.middleware.defaults :refer [wrap-defaults site-defaults]]
             [ring.middleware.json :refer [wrap-json-response wrap-json-body]]
