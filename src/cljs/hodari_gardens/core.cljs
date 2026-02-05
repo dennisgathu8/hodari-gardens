@@ -12,14 +12,14 @@
   "Mount the root React component to the DOM."
   []
   (rf/clear-subscription-cache!)
-  (rdom/render [views/main-panel]
-               (.getElementById js/document "app")))
+  (let [root-el (.getElementById js/document "app")]
+    (when root-el
+      (rdom/render [views/main-panel] root-el))))
 
 (defn ^:export init
   "Application initialization function.
    Called once when the app loads."
   []
-  (println "Initializing Hodari Gardens Resort application...")
   (rf/dispatch-sync [:initialize-db])
   (routes/init-routes!)
   (mount-root))

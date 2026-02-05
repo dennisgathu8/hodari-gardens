@@ -11,6 +11,11 @@
             [hodari-gardens.api :as api])
   (:gen-class))
 
+(defn index-handler [_]
+  "Handler to serve the main index.html file for SPA routing."
+  (-> (response/resource-response "public/index.html")
+      (response/content-type "text/html")))
+
 (def app-routes
   "Application routes using Reitit router.
    Defines all API endpoints and their handlers."
@@ -28,13 +33,15 @@
 
 (def app
   "Main application handler with middleware stack.
-   Wraps routes with JSON, parameters, and default middleware."
+   Wraps routes with JSON, parameters, and default middleware.
+   Includes a fallback handler for SPA client-side routing."
   (ring/ring-handler
    (ring/router app-routes
                 {:data {:middleware [parameters-middleware]}})
    (ring/routes
-    (ring/create-resource-handler {:path "/"})
-    (ring/create-default-handler))
+    (ring/create-resource-handler {:root "public" :path "/"})
+    (ring/create-default-handler
+     {:not-found index-handler}))
    {:middleware [[wrap-defaults (assoc-in site-defaults [:security :anti-forgery] false)]
                  wrap-json-response
                  [wrap-json-body {:keywords? true}]]}))
