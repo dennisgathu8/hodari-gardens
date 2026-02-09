@@ -71,7 +71,7 @@
         [nav-link :events "Events"]
         [nav-link :worldcup "World Cup 2026"]
         [nav-link :about "About"]
-        [nav-link :contact "Contact"]]
+        [nav-link :contact "Location"]]
        
        ;; Dark Mode Toggle & Mobile Menu Button
        [:div.flex.items-center.space-x-2

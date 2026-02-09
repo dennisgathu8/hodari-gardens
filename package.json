@@ -7,7 +7,7 @@
     "css": "tailwindcss -i src/css/input.css -o resources/public/css/styles.css",
     "css:watch": "tailwindcss -i src/css/input.css -o resources/public/css/styles.css --watch",
     "build": "npm run css && shadow-cljs release app",
-    "server": "clj -M:dev -m hodari-gardens.server"
+    "server": "clojure -M:dev -m hodari-gardens.server"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.16",

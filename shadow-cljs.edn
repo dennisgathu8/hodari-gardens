@@ -16,7 +16,6 @@
         :modules {:main {:init-fn hodari-gardens.core/init}}
         :devtools {:http-root "resources/public"
                    :http-port 8280
-                   :preloads [devtools.preload]
                    :after-load hodari-gardens.core/mount-root}
         :dev {:compiler-options {:closure-defines {goog.DEBUG true}}}
         :release {:compiler-options {:optimizations :advanced
