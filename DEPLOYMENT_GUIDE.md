@@ -37,7 +37,7 @@ fly auth login
 Go to the folder where your code lives.
 
 ```bash
-cd /path/to/your/hodari2
+cd /home/ugodzilla/hodari2
 ```
 
 ---
