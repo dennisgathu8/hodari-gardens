@@ -32,4 +32,8 @@
           :ns-default build}
   
   :test {:extra-paths ["test"]
-         :extra-deps {lambdaisland/kaocha {:mvn/version "1.87.1366"}}}}}
+         :extra-deps {lambdaisland/kaocha {:mvn/version "1.87.1366"}}}
+  
+  :lint {:extra-deps {clj-kondo/clj-kondo {:mvn/version "2023.10.20"}}}
+  
+  :format {:extra-deps {mvxcvi/cljstyle {:mvn/version "0.15.0"}}}}}
