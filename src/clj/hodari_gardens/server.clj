@@ -7,7 +7,7 @@
    - Fallback routing for Single Page Application (SPA)
    - Static resource serving from public/ directory"
   (:require [ring.adapter.jetty :refer [run-jetty]]
-            [ring.middleware.defaults :refer [wrap-defaults site-defaults]]
+            [ring.middleware.defaults :refer [wrap-defaults site-defaults secure-site-defaults]]
             [ring.middleware.json :refer [wrap-json-response wrap-json-body]]
             [ring.util.response :as response]
             [reitit.ring :as ring]
@@ -46,7 +46,12 @@
     (ring/create-resource-handler {:root "public" :path "/"})
     (ring/create-default-handler
      {:not-found index-handler}))
-   {:middleware [[wrap-defaults (assoc-in site-defaults [:security :anti-forgery] false)]
+   {:middleware [[wrap-defaults 
+                  (if (System/getenv "FLY_APP_NAME") ; Simple prod check
+                    (-> secure-site-defaults
+                        (assoc-in [:security :anti-forgery] false)
+                        (assoc-in [:security :content-security-policy] false))
+                    (assoc-in site-defaults [:security :anti-forgery] false))]
                  wrap-json-response
                  [wrap-json-body {:keywords? true}]]}))
 
