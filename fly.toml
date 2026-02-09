@@ -1,5 +1,5 @@
 app = "hodari-gardens"
-primary_region = "nbi" # Nairobi region if available, or closest
+# primary_region = "nbi" # Selected during 'fly launch'
 
 [http_service]
   internal_port = 3000
