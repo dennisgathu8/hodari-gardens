@@ -9,7 +9,6 @@
   (:require [ring.adapter.jetty :refer [run-jetty]]
             [ring.middleware.defaults :refer [wrap-defaults site-defaults]]
             [ring.middleware.json :refer [wrap-json-response wrap-json-body]]
-            [ring.middleware.reload :refer [wrap-reload]]
             [ring.util.response :as response]
             [reitit.ring :as ring]
             [reitit.ring.middleware.parameters :refer [parameters-middleware]]
@@ -51,17 +50,12 @@
                  wrap-json-response
                  [wrap-json-body {:keywords? true}]]}))
 
-(def dev-app
-  "Development application with auto-reload enabled."
-  (wrap-reload app))
-
 (defn -main
-  "Start the Jetty server on port 3000.
-   Use dev-app in development for hot reloading."
+  "Start the Jetty server on port 3000."
   [& args]
   (let [port (Integer/parseInt (or (System/getenv "PORT") "3000"))]
     (println (str "Starting Hodari Gardens server on port " port))
-    (run-jetty dev-app {:port port :join? false})))
+    (run-jetty app {:port port :join? false})))
 
 (comment
   ;; REPL development helpers

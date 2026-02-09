@@ -4,7 +4,7 @@
    :name "Standard Room"
    :description "Comfortable and cozy room perfect for solo travelers or couples. Features modern amenities and garden views."
    :capacity 2
-   :price {:ksh 4500 :usd 35}
+   :price nil
    :amenities ["Queen-size bed" "En-suite bathroom" "Free Wi-Fi" "Flat-screen TV" "Air conditioning" "Garden view" "Complimentary breakfast"]
    :images ["/assets/images/rooms/standard-1.jpg" "/assets/images/rooms/standard-2.jpg"]
    :available true}
@@ -14,7 +14,7 @@
    :name "Deluxe Room"
    :description "Spacious room with premium furnishings and enhanced amenities. Ideal for those seeking extra comfort and style."
    :capacity 3
-   :price {:ksh 7500 :usd 58}
+   :price nil
    :amenities ["King-size bed" "Luxury en-suite bathroom" "Free Wi-Fi" "Smart TV" "Air conditioning" "Mini-bar" "Balcony with garden view" "Work desk" "Complimentary breakfast" "Room service"]
    :images ["/assets/images/rooms/deluxe-1.jpg" "/assets/images/rooms/deluxe-2.jpg" "/assets/images/rooms/deluxe-3.jpg"]
    :available true}
@@ -24,7 +24,7 @@
    :name "Executive Suite"
    :description "Our finest accommodation featuring separate living area, premium amenities, and stunning views. Perfect for extended stays or special occasions."
    :capacity 4
-   :price {:ksh 12000 :usd 93}
+   :price nil
    :amenities ["King-size bed" "Separate living room" "Premium bathroom with bathtub" "Free Wi-Fi" "Smart TV in bedroom and living room" "Air conditioning" "Fully stocked mini-bar" "Private balcony" "Work desk" "Complimentary breakfast" "24/7 room service" "Coffee maker" "Safe"]
    :images ["/assets/images/rooms/suite-1.jpg" "/assets/images/rooms/suite-2.jpg" "/assets/images/rooms/suite-3.jpg" "/assets/images/rooms/suite-4.jpg"]
    :available true}]}
