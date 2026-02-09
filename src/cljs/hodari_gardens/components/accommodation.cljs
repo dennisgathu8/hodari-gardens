@@ -14,14 +14,18 @@
     (:name room)]
    [:p.text-gray-600.dark:text-gray-300.mb-4
     (:description room)]
-   [:div.flex.items-center.justify-between.mb-4
-    [:div
-     [:span.text-3xl.font-bold.text-garden-green-600.dark:text-garden-green-400
-      "KSh " (get-in room [:price :ksh])]
-     [:span.text-gray-500.dark:text-gray-400.ml-2
-      "/ night"]]
-    [:div.text-sm.text-gray-600.dark:text-gray-400
-     "Capacity: " (:capacity room) " guests"]]
+    [:div.flex.items-center.justify-between.mb-4
+     [:div
+      (if (:price room)
+        [:<>
+         [:span.text-3xl.font-bold.text-garden-green-600.dark:text-garden-green-400
+          "KSh " (get-in room [:price :ksh])]
+         [:span.text-gray-500.dark:text-gray-400.ml-2
+          "/ night"]]
+        [:span.text-2xl.font-bold.text-garden-green-600.dark:text-garden-green-400
+         "Price TBC"])]
+     [:div.text-sm.text-gray-600.dark:text-gray-400
+      "Capacity: " (:capacity room) " guests"]]
    [:div.mb-4
     [:h4.font-semibold.mb-2.text-gray-900.dark:text-white "Amenities:"]
     [:ul.grid.grid-cols-2.gap-2.text-sm.text-gray-600.dark:text-gray-300

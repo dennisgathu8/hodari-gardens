@@ -101,17 +101,20 @@ npm run server
 npm run dev
 ```
 
-### Production Build
+### Fly.io Deployment
+The project is configured for one-command deployment to Fly.io:
+
 ```bash
-# Unified build compiles CSS and JavaScript
-npm run build
+# 1. Install Fly CLI & Login
+curl -L https://fly.io/install.sh | sh
+fly auth login
 
-# Generate Backend Uberjar
-clj -T:build uber
-
-# Execution
-java -jar target/hodari-gardens-1.0.0.jar
+# 2. Launch (First time) / Deploy
+fly launch  # Follow prompts, use existing fly.toml
+fly deploy  # Subsequent updates
 ```
+
+The `Dockerfile` handles the multi-stage build automatically.
 
 ---
 
