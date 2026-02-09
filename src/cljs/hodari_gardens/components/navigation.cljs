@@ -45,7 +45,7 @@
                "About"]]
         [:div [:a.block.py-2.nav-link {:href (routes/href :contact)
                                         :on-click #(rf/dispatch [:close-mobile-menu])}
-               "Contact"]]]])))
+               "Location"]]]])))
 
 (defn navigation
   "Main navigation bar component."
