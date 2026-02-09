@@ -1,19 +1,34 @@
-# Hodari Gardens Resort: Digital Experience
+# Hodari Gardens Resort: Digital Excellence 🏝️✨
 
 [![Clojure](https://img.shields.io/badge/Clojure-1.11-blue.svg?logo=clojure&logoColor=white)](https://clojure.org/)
 [![ClojureScript](https://img.shields.io/badge/ClojureScript-1.11-blue.svg?logo=clojurescript&logoColor=white)](https://clojurescript.org/)
 [![React 18](https://img.shields.io/badge/React-18-61DAFB.svg?logo=react&logoColor=white)](https://react.dev/)
 [![Re-frame](https://img.shields.io/badge/re--frame-1.3.0-orange.svg)](https://day8.github.io/re-frame/)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-3.4-38B2AC.svg?logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
-[![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+[![Security](https://img.shields.io/badge/Security-Hardened-green.svg)](SECURITY.md)
 
-A high-performance, reactive, and accessible digital platform for **Hodari Gardens Resort** in Nakuru, Kenya. Built with a modern Clojure/ClojureScript stack, this application leverages **React 18 Concurrent Rendering** and **re-frame** architectural patterns for an uncompromising user experience.
+A high-performance, reactive, and security-first digital platform for **Hodari Gardens Resort** in Nakuru, Kenya. This is not just a website; it's a demonstration of the **unreasonable effectiveness** of Functional Programming (FP) in modern web engineering.
 
 ---
 
-## 🏛 Architecture
+## ⚡ Why Clojure & ClojureScript?
 
-The system follows a pure functional, data-driven architecture. The frontend utilizes a unidirectional data flow (re-frame), while the backend serves as a stateless API layer powered by immutable EDN data structures.
+This platform leverages the unique power of the Lisp philosophy to achieve a level of craftsmanship and agility that 10x engineers demand:
+
+### 1. The Power of REPL-Driven Development
+We don't wait for "builds." With **Shadow-CLJS** and a connected REPL, we modify the running application with sub-millisecond feedback. Logic changes, design tweaks, and state migrations happen live—without lost session state.
+
+### 2. Immutability as a Superpower
+By treating data as immutable and pushing side effects to the "edges" (via **re-frame** interceptors), we eliminate entire classes of bugs related to shared mutable state. The result is a rock-solid UI that behaves predictably under heavy interaction.
+
+### 3. Data-Oriented Design
+Everything is data. Routes, configuration, UI components, and state are all expressed as plain Clojure maps and vectors (EDN). This makes the system profoundly introspectable and easy to refactor.
+
+---
+
+## 🏛 Architectural Excellence
+
+The system follows a pure functional, unidirectional data flow architecture.
 
 ```mermaid
 graph TD
@@ -21,7 +36,7 @@ graph TD
         D[(Resources EDN)]
     end
 
-    subgraph "Backend (Clojure / Ring)"
+    subgraph "Backend (JVM / Clojure)"
         S[Jetty Server]
         R[Reitit Router]
         A[API Handlers]
@@ -30,7 +45,7 @@ graph TD
         A -.-> D
     end
 
-    subgraph "Frontend (ClojureScript / Re-frame)"
+    subgraph "Frontend (JS / ClojureScript)"
         V[Reagent Components]
         SUB[Subscriptions]
         E[Event Handlers]
@@ -42,87 +57,62 @@ graph TD
         SUB --> V
     end
 
-    A <== "JSON / HTTP" ==> E
+    A <== "Protobuf-like EDN Transduction" ==> E
 ```
+
+---
+
+## 🛡 Security Architecture
+
+Security is not a feature; it's an invariant.
+
+*   **Stateless Execution**: The backend maintains no session state, reducing the attack surface for session hijacking.
+*   **Malli-Strict Validation**: Every API request and response is validated against formal schemas (**Malli**), ensuring zero unexpected data reaches the core logic.
+*   **CSRF & XSS Hardening**: Leveraging Ring’s secure-site defaults and Reagent’s inherent protection against XSS by treating strings as text by default.
+*   **Atomic State Transitions**: Application state updates are atomic, preventing "torn" state or race conditions.
 
 ---
 
 ## 🚀 Technical Highlights
 
-### 1. Modern UI Engine
-- **React 18 Concurrent Mode**: Migrated to `reagent.dom.client/create-root` for improved rendering performance and future-proofing.
-- **HSL-Based Design System**: Custom tailored color palettes ("Garden Green" & "Resort Gold") implemented via **Tailwind CSS**.
-- **Dark Mode Native**: First-class support for system preferences and manual toggles with smooth transitions.
-
-### 2. Full-Stack Performance
-- **Unified Build Pipeline**: Automated Tailwind CSS compilation integrated with Shadow-CLJS advanced compilation.
-- **SPA Fallback Routing**: Robust backend implementation ensuring 404-free page refreshes and direct URL navigation.
-- **Zero-Dependency Data**: Core configuration stored in immutable EDN files for rapid iteration without database overhead.
-
-### 3. Feature Set
-- **Accommodation Engine**: Dynamic room exploration with multi-currency pricing display.
-- **World Cup 2026 Hub**: Reactive countdown and match schedule filtering system.
-- **Event Orchestration**: Rich media gallery with lazy-loading and lightbox integration.
-- **Inquiry Pipeline**: Validated multi-step form data submission.
+*   **React 18 Concurrent Rendering**: Optimized for fluid UI response even during heavy data transduction.
+*   **HSL Design Tokens**: A custom design system built with **Tailwind CSS**, optimized for both high-contrast luxury and low-light dark mode.
+*   **Zero-Dependency Persistence**: Rapid, high-performance data access using optimized EDN resource loading.
 
 ---
 
-## 🛠 Tech Stack
-
-| Layer | Technology | Purpose |
-| :--- | :--- | :--- |
-| **Backend** | Clojure (JVM) | Core business logic & API orchestration |
-| **Web Server** | Ring + Jetty | High-concurrency HTTP stack |
-| **Frontend** | ClojureScript / React 18 | Reactive UI & Concurrent Rendering |
-| **State** | Re-frame | Global state management (interceptors, side-effects) |
-| **Styling** | Tailwind CSS | Utility-first design system |
-| **Routing** | Reitit / Bidi | Bidirectional, data-driven routing |
-| **Build** | Shadow-CLJS / NPM | Hot-reloading & asset optimization |
-
----
-
-## 📖 Developer Workflow
+## 🛠 Developer Workflow (10x Standard)
 
 ### Prerequisites
-- JDK 11+
+- JDK 17+
 - Clojure CLI
-- Node.js 18+ & NPM
+- Node.js 20+
 
-### Environment Setup
+### Setup & Development
 ```bash
-# 1. Install dependencies
+# Install dependencies
 npm install
 
-# 2. Spin up the ecosystem
-# Terminal A (Backend)
-npm run server
-
-# Terminal B (Frontend + Hot Reload)
-npm run dev
+# Start development ecosystem
+npm run dev     # Shadows-CLJS (Frontend)
+npm run server  # Jetty (Backend)
 ```
 
-### Fly.io Deployment
-The project is configured for one-command deployment to Fly.io:
-
+### Productivity Tools
 ```bash
-# 1. Install Fly CLI & Login
-curl -L https://fly.io/install.sh | sh
-fly auth login
-
-# 2. Launch (First time) / Deploy
-fly launch  # Follow prompts, use existing fly.toml
-fly deploy  # Subsequent updates
+npm run lint    # Run Clj-Kondo static analysis
+npm run format  # Enforce idiomatic code style
+npm run build   # Production asset compilation
 ```
 
-The `Dockerfile` handles the multi-stage build automatically.
-
 ---
 
-## 📞 Support & Collaboration
+## 👨‍💻 Primary Creator
 
-For technical inquiries or system architectural discussions:
-- **Project Site**: [hodarigardens.co.ke](https://hodarigardens.co.ke)
-- **Email**: dev@hodarigardens.co.ke
+Developed and Maintained with precision by **dennisgathu8**.
+
+*   **GitHub**: [@dennisgathu8](https://github.com/dennisgathu8)
+*   **Project Site**: [hodarigardens.co.ke](https://hodarigardens.co.ke)
 
 ---
-Copyright © 2026 Hodari Gardens Resort. Built with FP excellence.
+Copyright © 2026 dennisgathu8. Built with FP excellence.
