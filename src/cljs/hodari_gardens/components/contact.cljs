@@ -83,7 +83,6 @@
             "Phone"
             [:div
              [:p [:a.hover:text-garden-green-600 {:href (str "tel:" (get-in contact-info [:phone :primary]))} (get-in contact-info [:phone :primary])]]
-             [:p [:a.hover:text-garden-green-600 {:href (str "tel:" (get-in contact-info [:phone :secondary]))} (get-in contact-info [:phone :secondary])]]
              [:p.mt-2
               (when-let [wa-num (get-in contact-info [:phone :whatsapp])]
                 [:a.inline-flex.items-center.px-4.py-2.bg-green-500.text-white.rounded-lg.hover:bg-green-600
