@@ -71,6 +71,32 @@
    (:worldcup db)))
 
 (rf/reg-sub
+ :current-time
+ (fn [db _]
+   (or (:current-time db) (js/Date.))))
+
+(rf/reg-sub
+ :worldcup-countdown
+ :<- [:current-time]
+ :<- [:worldcup-tournament]
+ (fn [[current-time tournament] _]
+   (if-let [start-date (:start-date tournament)]
+     (let [start-ms (.getTime (js/Date. start-date))
+           now-ms (.getTime current-time)
+           diff-ms (- start-ms now-ms)]
+       (if (pos? diff-ms)
+         (let [secs (Math/floor (/ diff-ms 1000))
+               mins (Math/floor (/ secs 60))
+               hrs (Math/floor (/ mins 60))
+               days (Math/floor (/ hrs 24))]
+           {:days days
+            :hours (mod hrs 24)
+            :minutes (mod mins 60)
+            :seconds (mod secs 60)})
+         {:days 0 :hours 0 :minutes 0 :seconds 0}))
+     {:days 0 :hours 0 :minutes 0 :seconds 0})))
+
+(rf/reg-sub
  :worldcup-tournament
  (fn [db _]
    (get-in db [:worldcup :tournament])))

@@ -6,8 +6,13 @@
 [![Re-frame](https://img.shields.io/badge/re--frame-1.3.0-orange.svg)](https://day8.github.io/re-frame/)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-3.4-38B2AC.svg?logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
 [![Security](https://img.shields.io/badge/Security-Hardened-green.svg)](SECURITY.md)
+[![Deployment](https://img.shields.io/badge/Deployment-Fly.io-purple.svg)](https://hodari-gardens.fly.dev/)
 
-A high-performance, reactive, and security-first digital platform for **Hodari Gardens Resort** in Nakuru, Kenya. This is not just a website; it's a demonstration of the **unreasonable effectiveness** of Functional Programming (FP) in modern web engineering.
+A high-performance, reactive, and security-first digital platform for **Hodari Gardens Resort** in Nakuru, Kenya. 
+
+**🎉 Live Deployment:** [https://hodari-gardens.fly.dev/](https://hodari-gardens.fly.dev/)
+
+This is not just a website; it's a demonstration of the **unreasonable effectiveness** of Functional Programming (FP) in modern web engineering.
 
 ---
 

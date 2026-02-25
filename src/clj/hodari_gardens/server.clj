@@ -47,11 +47,7 @@
     (ring/create-default-handler
      {:not-found index-handler}))
    {:middleware [[wrap-defaults 
-                  (if (System/getenv "FLY_APP_NAME") ; Simple prod check
-                    (-> secure-site-defaults
-                        (assoc-in [:security :anti-forgery] false)
-                        (assoc-in [:security :content-security-policy] false))
-                    (assoc-in site-defaults [:security :anti-forgery] false))]
+                  (assoc-in site-defaults [:security :anti-forgery] false)]
                  wrap-json-response
                  [wrap-json-body {:keywords? true}]]}))
 
@@ -59,8 +55,8 @@
   "Start the Jetty server on port 3000."
   [& args]
   (let [port (Integer/parseInt (or (System/getenv "PORT") "3000"))]
-    (println (str "Starting Hodari Gardens server on port " port))
-    (run-jetty app {:port port :join? false})))
+    (println (str "Starting Hodari Gardens server on port " port " (0.0.0.0)"))
+    (run-jetty app {:port port :host "0.0.0.0" :join? false})))
 
 (comment
   ;; REPL development helpers

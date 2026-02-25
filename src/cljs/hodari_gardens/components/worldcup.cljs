@@ -6,27 +6,30 @@
 (defn countdown-timer
   "Countdown timer to World Cup 2026."
   []
-  (let [tournament @(rf/subscribe [:worldcup-tournament])
-        start-date (:start-date tournament)]
-    [:div.bg-gradient-to-r.from-blue-600.to-red-600.text-white.p-8.rounded-xl.text-center
-     [:h3.text-3xl.font-bold.mb-4 "FIFA World Cup 2026"]
-     [:div.text-5xl.font-bold.mb-2 "⚽"]
-     [:p.text-xl.mb-4 "Countdown to Kickoff"]
-     [:div.grid.grid-cols-4.gap-4.max-w-md.mx-auto
-      [:div.bg-white.bg-opacity-20.rounded-lg.p-4
-       [:div.text-3xl.font-bold "120"]
-       [:div.text-sm "Days"]]
-      [:div.bg-white.bg-opacity-20.rounded-lg.p-4
-       [:div.text-3xl.font-bold "15"]
-       [:div.text-sm "Hours"]]
-      [:div.bg-white.bg-opacity-20.rounded-lg.p-4
-       [:div.text-3xl.font-bold "30"]
-       [:div.text-sm "Minutes"]]
-      [:div.bg-white.bg-opacity-20.rounded-lg.p-4
-       [:div.text-3xl.font-bold "45"]
-       [:div.text-sm "Seconds"]]]
-     [:p.mt-4.text-lg
-      "June 11 - July 19, 2026"]]))
+  (rf/dispatch [:start-clock])
+  (fn []
+    (let [tournament @(rf/subscribe [:worldcup-tournament])
+          countdown @(rf/subscribe [:worldcup-countdown])
+          pad-zero (fn [n] (if (< n 10) (str "0" n) (str n)))]
+      [:div.bg-gradient-to-r.from-blue-600.to-red-600.text-white.p-8.rounded-xl.text-center
+       [:h3.text-3xl.font-bold.mb-4 "FIFA World Cup 2026"]
+       [:div.text-5xl.font-bold.mb-2 "⚽"]
+       [:p.text-xl.mb-4 "Countdown to Kickoff"]
+       [:div.grid.grid-cols-4.gap-4.max-w-md.mx-auto
+        [:div.bg-white.bg-opacity-20.rounded-lg.p-4
+         [:div.text-3xl.font-bold (:days countdown "0")]
+         [:div.text-sm "Days"]]
+        [:div.bg-white.bg-opacity-20.rounded-lg.p-4
+         [:div.text-3xl.font-bold (pad-zero (:hours countdown 0))]
+         [:div.text-sm "Hours"]]
+        [:div.bg-white.bg-opacity-20.rounded-lg.p-4
+         [:div.text-3xl.font-bold (pad-zero (:minutes countdown 0))]
+         [:div.text-sm "Minutes"]]
+        [:div.bg-white.bg-opacity-20.rounded-lg.p-4
+         [:div.text-3xl.font-bold (pad-zero (:seconds countdown 0))]
+         [:div.text-sm "Seconds"]]]
+       [:p.mt-4.text-lg
+        "June 11 - July 19, 2026"]])))
 
 (defn match-card
   "Individual match card."

@@ -12,6 +12,19 @@
  (fn [_ _]
    db/default-db))
 
+;; Time Tracking
+(rf/reg-event-db
+ :tick
+ (fn [db _]
+   (assoc db :current-time (js/Date.))))
+
+(rf/reg-event-fx
+ :start-clock
+ (fn [{:keys [db]} _]
+   (when-not (:clock-started? db)
+     (js/setInterval #(rf/dispatch [:tick]) 1000)
+     {:db (assoc db :clock-started? true)})))
+
 ;; Navigation
 (rf/reg-event-db
  :set-current-route
