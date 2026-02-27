@@ -13,10 +13,7 @@
      (:description drink)]
     (when (:size drink)
       [:p.text-xs.text-gray-500.dark:text-gray-500.mt-1
-       (:size drink)])]
-   [:div.ml-4.text-right
-    [:span.font-bold.text-garden-green-600.dark:text-garden-green-400
-     "KSh " (get-in drink [:price :ksh])]]])
+       (:size drink)])]])
 
 (defn menu-category
   "Menu category section."

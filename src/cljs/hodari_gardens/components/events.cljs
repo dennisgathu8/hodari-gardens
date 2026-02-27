@@ -16,19 +16,8 @@
    [:p.text-gray-600.dark:text-gray-300.mb-4
     (:description package)]
    [:div.mb-4
-    [:div.text-3xl.font-bold.text-garden-green-600.dark:text-garden-green-400
-     "KSh " (get-in package [:price :ksh])]
     [:div.text-sm.text-gray-500.dark:text-gray-400
      "Capacity: " (get-in package [:capacity :min]) " - " (get-in package [:capacity :max]) " guests"]]
-   [:div.mb-4
-    [:h4.font-semibold.mb-2.text-gray-900.dark:text-white "Includes:"]
-    [:ul.space-y-1.text-sm.text-gray-600.dark:text-gray-300
-     (for [item (:includes package)]
-       ^{:key item}
-       [:li.flex.items-start
-        [:svg.w-4.h-4.mr-2.mt-0.5.text-garden-green-600.flex-shrink-0 {:xmlns "http://www.w3.org/2000/svg" :viewBox "0 0 20 20" :fill "currentColor"}
-         [:path {:fill-rule "evenodd" :d "M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" :clip-rule "evenodd"}]]
-        item])]]
    [:div.text-sm.text-gray-600.dark:text-gray-400.mb-4
     "Duration: " (:duration package)]
    [:a.btn-primary.w-full.text-center.block
