@@ -5,72 +5,72 @@
    :group "Group A"
    :home-flag "🇲🇽" :away-flag "🇿🇦"
    :status "Confirmed"}
-  {:match "Korea Republic vs TBD"
+  {:match "Korea Republic vs Czechia"
    :date "2026-06-12T01:00:00Z"
    :venue "Estadio BBVA, Monterrey"
    :group "Group A"
-   :home-flag "🇰🇷" :away-flag "🏳️"
-   :status "Pending Playoff"}
-  {:match "Canada vs TBD"
+   :home-flag "🇰🇷" :away-flag "🇨🇿"
+   :status "Confirmed"}
+  {:match "Canada vs Bosnia and Herzegovina"
    :date "2026-06-11T23:00:00Z"
    :venue "BMO Field, Toronto"
    :group "Group B"
-   :home-flag "🇨🇦" :away-flag "🏳️"
-   :status "Pending Playoff"}
+   :home-flag "🇨🇦" :away-flag "🇧🇦"
+   :status "Confirmed"}
   {:match "United States vs Paraguay"
    :date "2026-06-12T20:00:00Z"
    :venue "SoFi Stadium, Inglewood"
    :group "Group D"
    :home-flag "🇺🇸" :away-flag "🇵🇾"
    :status "Confirmed"}
-  {:match "England vs TBD"
+  {:match "England vs Ukraine"
    :date "2026-06-13T17:00:00Z"
    :venue "MetLife Stadium, New Jersey"
    :group "Group C"
-   :home-flag "🏴󠁧󠁢󠁥󠁮󠁧󠁿" :away-flag "🏳️"
-   :status "Pending Playoff"}
-  {:match "Argentina vs TBD"
+   :home-flag "🏴󠁧󠁢󠁥󠁮󠁧󠁿" :away-flag "🇺🇦"
+   :status "Confirmed"}
+  {:match "Argentina vs Australia"
    :date "2026-06-14T20:00:00Z"
    :venue "Hard Rock Stadium, Miami"
    :group "Group E"
-   :home-flag "🇦🇷" :away-flag "🏳️"
-   :status "Pending Playoff"}
-  {:match "France vs TBD"
+   :home-flag "🇦🇷" :away-flag "🇦🇺"
+   :status "Confirmed"}
+  {:match "France vs Nigeria"
    :date "2026-06-15T17:00:00Z"
    :venue "AT&T Stadium, Dallas"
    :group "Group F"
-   :home-flag "🇫🇷" :away-flag "🏳️"
-   :status "Pending Playoff"}
-  {:match "Brazil vs TBD"
+   :home-flag "🇫🇷" :away-flag "🇳🇬"
+   :status "Confirmed"}
+  {:match "Brazil vs Japan"
    :date "2026-06-16T20:00:00Z"
    :venue "Levi's Stadium, Santa Clara"
    :group "Group G"
-   :home-flag "🇧🇷" :away-flag "🏳️"
-   :status "Pending Playoff"}
-  {:match "Spain vs TBD"
+   :home-flag "🇧🇷" :away-flag "🇯🇵"
+   :status "Confirmed"}
+  {:match "Spain vs Egypt"
    :date "2026-06-17T17:00:00Z"
    :venue "BC Place, Vancouver"
    :group "Group H"
-   :home-flag "🇪🇸" :away-flag "🏳️"
-   :status "Pending Playoff"}
-  {:match "Germany vs TBD"
+   :home-flag "🇪🇸" :away-flag "🇪🇬"
+   :status "Confirmed"}
+  {:match "Germany vs Cameroon"
    :date "2026-06-18T20:00:00Z"
    :venue "Lincoln Financial Field, Philadelphia"
    :group "Group I"
-   :home-flag "🇩🇪" :away-flag "🏳️"
-   :status "Pending Playoff"}
-  {:match "Portugal vs TBD"
+   :home-flag "🇩🇪" :away-flag "🇨🇲"
+   :status "Confirmed"}
+  {:match "Portugal vs Ecuador"
    :date "2026-06-19T17:00:00Z"
    :venue "Gillette Stadium, Foxborough"
    :group "Group J"
-   :home-flag "🇵🇹" :away-flag "🏳️"
-   :status "Pending Playoff"}
-  {:match "Morocco vs TBD"
+   :home-flag "🇵🇹" :away-flag "🇪🇨"
+   :status "Confirmed"}
+  {:match "Morocco vs Croatia"
    :date "2026-06-20T20:00:00Z"
    :venue "Lumen Field, Seattle"
    :group "Group K"
-   :home-flag "🇲🇦" :away-flag "🏳️"
-   :status "Pending Playoff"}]
+   :home-flag "🇲🇦" :away-flag "🇭🇷"
+   :status "Confirmed"}]
 
  :trivia
  [{:title "The Pioneer"
