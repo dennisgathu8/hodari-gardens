@@ -5,17 +5,23 @@
    :group "Group A"
    :home-flag "🇲🇽" :away-flag "🇿🇦"
    :status "Confirmed"}
-  {:match "Korea Republic vs Czechia"
+  {:match "Korea Republic vs Ukraine"
    :date "2026-06-12T01:00:00Z"
    :venue "Estadio BBVA, Monterrey"
    :group "Group A"
-   :home-flag "🇰🇷" :away-flag "🇨🇿"
+   :home-flag "🇰🇷" :away-flag "🇺🇦"
    :status "Confirmed"}
-  {:match "Canada vs Bosnia and Herzegovina"
+  {:match "Canada vs Czechia"
    :date "2026-06-11T23:00:00Z"
    :venue "BMO Field, Toronto"
    :group "Group B"
-   :home-flag "🇨🇦" :away-flag "🇧🇦"
+   :home-flag "🇨🇦" :away-flag "🇨🇿"
+   :status "Confirmed"}
+  {:match "Switzerland vs Qatar"
+   :date "2026-06-12T17:00:00Z"
+   :venue "Levi's Stadium, Santa Clara"
+   :group "Group B"
+   :home-flag "🇨🇭" :away-flag "🇶🇦"
    :status "Confirmed"}
   {:match "United States vs Paraguay"
    :date "2026-06-12T20:00:00Z"
@@ -23,54 +29,88 @@
    :group "Group D"
    :home-flag "🇺🇸" :away-flag "🇵🇾"
    :status "Confirmed"}
-  {:match "England vs Ukraine"
+  {:match "Australia vs Türkiye"
+   :date "2026-06-13T14:00:00Z"
+   :venue "NRG Stadium, Houston"
+   :group "Group D"
+   :home-flag "🇦🇺" :away-flag "🇹🇷"
+   :status "Confirmed"}
+  {:match "Brazil vs Morocco"
    :date "2026-06-13T17:00:00Z"
    :venue "MetLife Stadium, New Jersey"
    :group "Group C"
-   :home-flag "🏴󠁧󠁢󠁥󠁮󠁧󠁿" :away-flag "🇺🇦"
+   :home-flag "🇧🇷" :away-flag "🇲🇦"
    :status "Confirmed"}
-  {:match "Argentina vs Australia"
-   :date "2026-06-14T20:00:00Z"
-   :venue "Hard Rock Stadium, Miami"
+  {:match "Scotland vs Haiti"
+   :date "2026-06-13T20:00:00Z"
+   :venue "Gillette Stadium, Foxborough"
+   :group "Group C"
+   :home-flag "🏴󠁧󠁢󠁳󠁣󠁴󠁿" :away-flag "🇭🇹"
+   :status "Confirmed"}
+  {:match "Germany vs Ecuador"
+   :date "2026-06-14T17:00:00Z"
+   :venue "Lincoln Financial Field, Philadelphia"
    :group "Group E"
-   :home-flag "🇦🇷" :away-flag "🇦🇺"
+   :home-flag "🇩🇪" :away-flag "🇪🇨"
    :status "Confirmed"}
-  {:match "France vs Nigeria"
-   :date "2026-06-15T17:00:00Z"
+  {:match "Netherlands vs Japan"
+   :date "2026-06-15T20:00:00Z"
    :venue "AT&T Stadium, Dallas"
    :group "Group F"
-   :home-flag "🇫🇷" :away-flag "🇳🇬"
+   :home-flag "🇳🇱" :away-flag "🇯🇵"
    :status "Confirmed"}
-  {:match "Brazil vs Japan"
-   :date "2026-06-16T20:00:00Z"
-   :venue "Levi's Stadium, Santa Clara"
-   :group "Group G"
-   :home-flag "🇧🇷" :away-flag "🇯🇵"
-   :status "Confirmed"}
-  {:match "Spain vs Egypt"
-   :date "2026-06-17T17:00:00Z"
-   :venue "BC Place, Vancouver"
-   :group "Group H"
-   :home-flag "🇪🇸" :away-flag "🇪🇬"
-   :status "Confirmed"}
-  {:match "Germany vs Cameroon"
-   :date "2026-06-18T20:00:00Z"
-   :venue "Lincoln Financial Field, Philadelphia"
-   :group "Group I"
-   :home-flag "🇩🇪" :away-flag "🇨🇲"
-   :status "Confirmed"}
-  {:match "Portugal vs Ecuador"
-   :date "2026-06-19T17:00:00Z"
-   :venue "Gillette Stadium, Foxborough"
+  {:match "Argentina vs Austria"
+   :date "2026-06-14T20:00:00Z"
+   :venue "Hard Rock Stadium, Miami"
    :group "Group J"
-   :home-flag "🇵🇹" :away-flag "🇪🇨"
+   :home-flag "🇦🇷" :away-flag "🇦🇹"
    :status "Confirmed"}
-  {:match "Morocco vs Croatia"
-   :date "2026-06-20T20:00:00Z"
-   :venue "Lumen Field, Seattle"
-   :group "Group K"
-   :home-flag "🇲🇦" :away-flag "🇭🇷"
+  {:match "England vs Croatia"
+   :date "2026-06-15T15:00:00Z"
+   :venue "BC Place, Vancouver"
+   :group "Group L"
+   :home-flag "🏴󠁧󠁢󠁥󠁮󠁧󠁿" :away-flag "🇭🇷"
    :status "Confirmed"}]
+
+ :groups
+ [{:letter "A" :teams [{:name "Mexico" :flag "🇲🇽"} {:name "South Korea" :flag "🇰🇷"} {:name "South Africa" :flag "🇿🇦"} {:name "Ukraine" :flag "🇺🇦"}]}
+  {:letter "B" :teams [{:name "Canada" :flag "🇨🇦"} {:name "Switzerland" :flag "🇨🇭"} {:name "Qatar" :flag "🇶🇦"} {:name "Czechia" :flag "🇨🇿"}]}
+  {:letter "C" :teams [{:name "Brazil" :flag "🇧🇷"} {:name "Morocco" :flag "🇲🇦"} {:name "Scotland" :flag "🏴󠁧󠁢󠁳󠁣󠁴󠁿"} {:name "Haiti" :flag "🇭🇹"}]}
+  {:letter "D" :teams [{:name "USA" :flag "🇺🇸"} {:name "Australia" :flag "🇦🇺"} {:name "Paraguay" :flag "🇵🇾"} {:name "Türkiye" :flag "🇹🇷"}]}
+  {:letter "E" :teams [{:name "Germany" :flag "🇩🇪"} {:name "Ecuador" :flag "🇪🇨"} {:name "Ivory Coast" :flag "🇨🇮"} {:name "Curaçao" :flag "🇨🇼"}]}
+  {:letter "F" :teams [{:name "Netherlands" :flag "🇳🇱"} {:name "Japan" :flag "🇯🇵"} {:name "Tunisia" :flag "🇹🇳"} {:name "Peru" :flag "🇵🇪"}]}
+  {:letter "G" :teams [{:name "Belgium" :flag "🇧🇪"} {:name "Iran" :flag "🇮🇷"} {:name "Egypt" :flag "🇪🇬"} {:name "New Zealand" :flag "🇳🇿"}]}
+  {:letter "H" :teams [{:name "Spain" :flag "🇪🇸"} {:name "Uruguay" :flag "🇺🇾"} {:name "Saudi Arabia" :flag "🇸🇦"} {:name "Cape Verde" :flag "🇨🇻"}]}
+  {:letter "I" :teams [{:name "France" :flag "🇫🇷"} {:name "Senegal" :flag "🇸🇳"} {:name "Norway" :flag "🇳🇴"} {:name "Cameroon" :flag "🇨🇲"}]}
+  {:letter "J" :teams [{:name "Argentina" :flag "🇦🇷"} {:name "Austria" :flag "🇦🇹"} {:name "Algeria" :flag "🇩🇿"} {:name "Jordan" :flag "🇯🇴"}]}
+  {:letter "K" :teams [{:name "Portugal" :flag "🇵🇹"} {:name "Colombia" :flag "🇨🇴"} {:name "Uzbekistan" :flag "🇺🇿"} {:name "Costa Rica" :flag "🇨🇷"}]}
+  {:letter "L" :teams [{:name "England" :flag "🏴󠁧󠁢󠁥󠁮󠁧󠁿"} {:name "Croatia" :flag "🇭🇷"} {:name "Panama" :flag "🇵🇦"} {:name "Ghana" :flag "🇬🇭"}]}]
+
+ :venues
+ [{:city "Atlanta" :stadium "Mercedes-Benz Stadium" :country "USA" :capacity 71000 :flag "🇺🇸"}
+  {:city "Boston" :stadium "Gillette Stadium" :country "USA" :capacity 65878 :flag "🇺🇸"}
+  {:city "Dallas" :stadium "AT&T Stadium" :country "USA" :capacity 80000 :flag "🇺🇸"}
+  {:city "Guadalajara" :stadium "Estadio Akron" :country "Mexico" :capacity 48070 :flag "🇲🇽"}
+  {:city "Houston" :stadium "NRG Stadium" :country "USA" :capacity 72220 :flag "🇺🇸"}
+  {:city "Kansas City" :stadium "Arrowhead Stadium" :country "USA" :capacity 76416 :flag "🇺🇸"}
+  {:city "Los Angeles" :stadium "SoFi Stadium" :country "USA" :capacity 70240 :flag "🇺🇸"}
+  {:city "Mexico City" :stadium "Estadio Azteca" :country "Mexico" :capacity 87523 :flag "🇲🇽"}
+  {:city "Miami" :stadium "Hard Rock Stadium" :country "USA" :capacity 64767 :flag "🇺🇸"}
+  {:city "Monterrey" :stadium "Estadio BBVA" :country "Mexico" :capacity 53500 :flag "🇲🇽"}
+  {:city "New York/New Jersey" :stadium "MetLife Stadium" :country "USA" :capacity 82500 :flag "🇺🇸"}
+  {:city "Philadelphia" :stadium "Lincoln Financial Field" :country "USA" :capacity 69796 :flag "🇺🇸"}
+  {:city "San Francisco Bay Area" :stadium "Levi's Stadium" :country "USA" :capacity 68500 :flag "🇺🇸"}
+  {:city "Seattle" :stadium "Lumen Field" :country "USA" :capacity 69000 :flag "🇺🇸"}
+  {:city "Toronto" :stadium "BMO Field" :country "Canada" :capacity 30000 :flag "🇨🇦"}
+  {:city "Vancouver" :stadium "BC Place" :country "Canada" :capacity 54500 :flag "🇨🇦"}]
+
+ :knockout-stages
+ [{:stage "Round of 32" :dates "June 28 – July 3, 2026" :matches 16 :description "Top 2 from each group + 8 best 3rd placed teams"}
+  {:stage "Round of 16" :dates "July 4 – July 7, 2026" :matches 8 :description "The elite sixteen face off in knockout warfare"}
+  {:stage "Quarterfinals" :dates "July 9 – July 11, 2026" :matches 4 :description "Eight teams remain in search of football glory"}
+  {:stage "Semifinals" :dates "July 14 – July 15, 2026" :matches 2 :description "The ultimate four battle for a spot in the final"}
+  {:stage "Bronze Match" :dates "July 18, 2026" :matches 1 :description "Third-place play-off hosted at Hard Rock Stadium, Miami"}
+  {:stage "Grand Final" :dates "July 19, 2026" :matches 1 :description "World Cup Final hosted at MetLife Stadium, NY/NJ"}]
 
  :trivia
  [{:title "The Pioneer"
