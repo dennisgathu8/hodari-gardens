@@ -1,9 +1,9 @@
-FROM node:20-alpine AS node-provider
-
 FROM clojure:temurin-17-tools-deps AS builder
-COPY --from=node-provider /usr/local/bin/node /usr/local/bin/node
-COPY --from=node-provider /usr/local/lib/node_modules /usr/local/lib/node_modules
-COPY --from=node-provider /usr/local/bin/npm /usr/local/bin/npm
+
+# Install Node.js 20
+RUN apt-get update && apt-get install -y curl && \
+    curl -fsSL https://deb.nodesource.com/setup_20.x | bash - && \
+    apt-get install -y nodejs
 
 WORKDIR /app
 
