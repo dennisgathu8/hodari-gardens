@@ -16,10 +16,8 @@
             :gallery []}
    :drinks {:menu {}
             :happy-hours []}
-   :worldcup {:tournament {}
-              :matches []
-              :viewing-packages []
-              :facilities {}}
+    :world-cup {:fixtures []
+                :trivia []}
    :contact {}
    
    ;; UI state

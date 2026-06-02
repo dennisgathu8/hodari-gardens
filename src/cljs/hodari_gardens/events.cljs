@@ -105,23 +105,6 @@
        (assoc :loading? false))))
 
 (rf/reg-event-fx
- :fetch-worldcup
- (fn [{:keys [db]} _]
-   {:db (assoc db :loading? true)
-    :http-xhrio {:method :get
-                 :uri "/api/worldcup"
-                 :response-format (ajax/json-response-format {:keywords? true})
-                 :on-success [:fetch-worldcup-success]
-                 :on-failure [:fetch-failure]}}))
-
-(rf/reg-event-db
- :fetch-worldcup-success
- (fn [db [_ response]]
-   (-> db
-       (assoc :worldcup response)
-       (assoc :loading? false))))
-
-(rf/reg-event-fx
  :fetch-contact
  (fn [{:keys [db]} _]
    {:db (assoc db :loading? true)
@@ -136,6 +119,22 @@
  (fn [db [_ response]]
    (-> db
        (assoc :contact response)
+       (assoc :loading? false))))
+(rf/reg-event-fx
+ :fetch-world-cup
+ (fn [{:keys [db]} _]
+   {:db (assoc db :loading? true)
+    :http-xhrio {:method :get
+                 :uri "/api/world-cup"
+                 :response-format (ajax/json-response-format {:keywords? true})
+                 :on-success [:fetch-world-cup-success]
+                 :on-failure [:fetch-failure]}}))
+
+(rf/reg-event-db
+ :fetch-world-cup-success
+ (fn [db [_ response]]
+   (-> db
+       (assoc :world-cup response)
        (assoc :loading? false))))
 
 (rf/reg-event-db
@@ -178,7 +177,7 @@
 
 (rf/reg-event-db
  :submit-booking-failure
- (fn [db [_ error]]
+ (fn [db [_ _error]]
    (js/alert "Failed to submit booking. Please try again.")
    (assoc db :form-submitting? false)))
 
@@ -204,7 +203,7 @@
 
 (rf/reg-event-db
  :submit-inquiry-failure
- (fn [db [_ error]]
+ (fn [db [_ _error]]
    (js/alert "Failed to submit inquiry. Please try again.")
    (assoc db :form-submitting? false)))
 

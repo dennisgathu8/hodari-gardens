@@ -11,9 +11,9 @@
         ["accommodation" :accommodation]
         ["drinks" :drinks]
         ["events" :events]
-        ["worldcup" :worldcup]
         ["contact" :contact]
-        ["about" :about]]])
+        ["about" :about]
+        ["world-cup" :world-cup]]])
 
 (defn- parse-url
   "Parse URL and extract route information."

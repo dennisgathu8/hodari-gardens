@@ -1,0 +1,81 @@
+{:fixtures
+ [{:match "Mexico vs South Africa"
+   :date "2026-06-11T20:00:00Z"
+   :venue "Azteca Stadium, Mexico City"
+   :group "Group A"
+   :home-flag "🇲🇽" :away-flag "🇿🇦"
+   :status "Confirmed"}
+  {:match "Korea Republic vs TBD"
+   :date "2026-06-12T01:00:00Z"
+   :venue "Estadio BBVA, Monterrey"
+   :group "Group A"
+   :home-flag "🇰🇷" :away-flag "🏳️"
+   :status "Pending Playoff"}
+  {:match "Canada vs TBD"
+   :date "2026-06-11T23:00:00Z"
+   :venue "BMO Field, Toronto"
+   :group "Group B"
+   :home-flag "🇨🇦" :away-flag "🏳️"
+   :status "Pending Playoff"}
+  {:match "United States vs Paraguay"
+   :date "2026-06-12T20:00:00Z"
+   :venue "SoFi Stadium, Inglewood"
+   :group "Group D"
+   :home-flag "🇺🇸" :away-flag "🇵🇾"
+   :status "Confirmed"}
+  {:match "England vs TBD"
+   :date "2026-06-13T17:00:00Z"
+   :venue "MetLife Stadium, New Jersey"
+   :group "Group C"
+   :home-flag "🏴󠁧󠁢󠁥󠁮󠁧󠁿" :away-flag "🏳️"
+   :status "Pending Playoff"}
+  {:match "Argentina vs TBD"
+   :date "2026-06-14T20:00:00Z"
+   :venue "Hard Rock Stadium, Miami"
+   :group "Group E"
+   :home-flag "🇦🇷" :away-flag "🏳️"
+   :status "Pending Playoff"}
+  {:match "France vs TBD"
+   :date "2026-06-15T17:00:00Z"
+   :venue "AT&T Stadium, Dallas"
+   :group "Group F"
+   :home-flag "🇫🇷" :away-flag "🏳️"
+   :status "Pending Playoff"}
+  {:match "Brazil vs TBD"
+   :date "2026-06-16T20:00:00Z"
+   :venue "Levi's Stadium, Santa Clara"
+   :group "Group G"
+   :home-flag "🇧🇷" :away-flag "🏳️"
+   :status "Pending Playoff"}
+  {:match "Spain vs TBD"
+   :date "2026-06-17T17:00:00Z"
+   :venue "BC Place, Vancouver"
+   :group "Group H"
+   :home-flag "🇪🇸" :away-flag "🏳️"
+   :status "Pending Playoff"}
+  {:match "Germany vs TBD"
+   :date "2026-06-18T20:00:00Z"
+   :venue "Lincoln Financial Field, Philadelphia"
+   :group "Group I"
+   :home-flag "🇩🇪" :away-flag "🏳️"
+   :status "Pending Playoff"}
+  {:match "Portugal vs TBD"
+   :date "2026-06-19T17:00:00Z"
+   :venue "Gillette Stadium, Foxborough"
+   :group "Group J"
+   :home-flag "🇵🇹" :away-flag "🏳️"
+   :status "Pending Playoff"}
+  {:match "Morocco vs TBD"
+   :date "2026-06-20T20:00:00Z"
+   :venue "Lumen Field, Seattle"
+   :group "Group K"
+   :home-flag "🇲🇦" :away-flag "🏳️"
+   :status "Pending Playoff"}]
+
+ :trivia
+ [{:title "The Pioneer"
+   :fact "Egypt (1934) was the first African nation to ever grace the World Cup stage."
+   :year 1934}
+  {:title "The Semi-Finalist"
+   :fact "Morocco (2022) made history as the first African team to reach a World Cup Semi-Final."
+   :year 2022}]}

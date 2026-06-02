@@ -2,16 +2,15 @@
   "Main view components for Hodari Gardens application.
    Contains all UI components organized by section."
   (:require [re-frame.core :as rf]
-            [hodari-gardens.routes :as routes]
             [hodari-gardens.components.hero :as hero]
             [hodari-gardens.components.navigation :as nav]
             [hodari-gardens.components.accommodation :as accommodation]
             [hodari-gardens.components.drinks :as drinks]
             [hodari-gardens.components.events :as events]
-            [hodari-gardens.components.worldcup :as worldcup]
             [hodari-gardens.components.contact :as contact]
             [hodari-gardens.components.footer :as footer]
-            [hodari-gardens.components.about :as about]))
+            [hodari-gardens.components.about :as about]
+            [hodari-gardens.pages.world-cup :as world-cup]))
 
 (defn home-page
   "Home page with hero and overview sections."
@@ -20,8 +19,7 @@
    [hero/hero-section]
    [accommodation/accommodation-preview]
    [drinks/drinks-preview]
-   [events/events-preview]
-   [worldcup/worldcup-preview]])
+   [events/events-preview]])
 
 (defn accommodation-page
   "Full accommodation page."
@@ -37,11 +35,6 @@
   "Full events & gardens page."
   []
   [events/events-section])
-
-(defn worldcup-page
-  "Full World Cup 2026 page."
-  []
-  [worldcup/worldcup-section])
 
 (defn contact-page
   "Contact page."
@@ -62,9 +55,9 @@
       :accommodation [accommodation-page]
       :drinks [drinks-page]
       :events [events-page]
-      :worldcup [worldcup-page]
       :contact [contact-page]
       :about [about-page]
+      :world-cup [world-cup/world-cup-page]
       [home-page])))
 
 (defn main-panel

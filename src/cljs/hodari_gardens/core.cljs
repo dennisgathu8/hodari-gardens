@@ -28,5 +28,10 @@
    Initializes global state, routing history, and mounts the UI."
   []
   (rf/dispatch-sync [:initialize-db])
+  (rf/dispatch [:start-clock])
+  (rf/dispatch [:fetch-rooms])
+  (rf/dispatch [:fetch-events])
+  (rf/dispatch [:fetch-drinks])
+  (rf/dispatch [:fetch-world-cup])
   (routes/init-routes!)
   (mount-root))

@@ -1,5 +1,6 @@
 (ns hodari-gardens.components.about
-  "About section component.")
+  "About section component."
+  (:require [hodari-gardens.routes :as routes]))
 
 (defn about-section
   "About page content."
@@ -39,7 +40,7 @@
        [:li.flex.items-start
         [:svg.w-6.h-6.mr-3.text-garden-green-600.flex-shrink-0.mt-1 {:xmlns "http://www.w3.org/2000/svg" :viewBox "0 0 20 20" :fill "currentColor"}
          [:path {:fill-rule "evenodd" :d "M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" :clip-rule "evenodd"}]]
-        [:span [:strong "Sports Viewing:"] " Multiple big screens for watching major sporting events including World Cup 2026"]]
+        [:span [:strong "Sports Viewing:"] " Multiple big screens for watching major sporting events"]]
        [:li.flex.items-start
         [:svg.w-6.h-6.mr-3.text-garden-green-600.flex-shrink-0.mt-1 {:xmlns "http://www.w3.org/2000/svg" :viewBox "0 0 20 20" :fill "currentColor"}
          [:path {:fill-rule "evenodd" :d "M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" :clip-rule "evenodd"}]]
@@ -80,5 +81,5 @@
      
      [:div.text-center.mt-12
       [:a.btn-primary.inline-block
-       {:href "#contact"}
+       {:href (routes/href :contact)}
        "Get In Touch"]]]]])

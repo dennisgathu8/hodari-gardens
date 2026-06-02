@@ -24,7 +24,6 @@
        [:li [:a.hover:text-white.transition-colors {:href (routes/href :home)} "Home"]]
        [:li [:a.hover:text-white.transition-colors {:href (routes/href :accommodation)} "Accommodation"]]
        [:li [:a.hover:text-white.transition-colors {:href (routes/href :events)} "Events"]]
-       [:li [:a.hover:text-white.transition-colors {:href (routes/href :worldcup)} "World Cup 2026"]]
        [:li [:a.hover:text-white.transition-colors {:href (routes/href :about)} "About Us"]]]]
      
      ;; Services

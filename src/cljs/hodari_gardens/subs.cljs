@@ -10,6 +10,11 @@
    (:current-route db)))
 
 (rf/reg-sub
+ :current-time
+ (fn [db _]
+   (:current-time db)))
+
+(rf/reg-sub
  :dark-mode?
  (fn [db _]
    (:dark-mode? db)))
@@ -66,52 +71,6 @@
    (get-in db [:drinks :happy-hours])))
 
 (rf/reg-sub
- :worldcup
- (fn [db _]
-   (:worldcup db)))
-
-(rf/reg-sub
- :current-time
- (fn [db _]
-   (or (:current-time db) (js/Date.))))
-
-(rf/reg-sub
- :worldcup-countdown
- :<- [:current-time]
- :<- [:worldcup-tournament]
- (fn [[current-time tournament] _]
-   (if-let [start-date (:start-date tournament)]
-     (let [start-ms (.getTime (js/Date. start-date))
-           now-ms (.getTime current-time)
-           diff-ms (- start-ms now-ms)]
-       (if (pos? diff-ms)
-         (let [secs (Math/floor (/ diff-ms 1000))
-               mins (Math/floor (/ secs 60))
-               hrs (Math/floor (/ mins 60))
-               days (Math/floor (/ hrs 24))]
-           {:days days
-            :hours (mod hrs 24)
-            :minutes (mod mins 60)
-            :seconds (mod secs 60)})
-         {:days 0 :hours 0 :minutes 0 :seconds 0}))
-     {:days 0 :hours 0 :minutes 0 :seconds 0})))
-
-(rf/reg-sub
- :worldcup-tournament
- (fn [db _]
-   (get-in db [:worldcup :tournament])))
-
-(rf/reg-sub
- :worldcup-matches
- (fn [db _]
-   (get-in db [:worldcup :matches])))
-
-(rf/reg-sub
- :viewing-packages
- (fn [db _]
-   (get-in db [:worldcup :viewing-packages])))
-
-(rf/reg-sub
  :contact
  (fn [db _]
    (:contact db)))
@@ -151,3 +110,17 @@
          images (:images lightbox)]
      (when (and images (< index (count images)))
        (nth images index)))))
+(rf/reg-sub
+ :world-cup
+ (fn [db _]
+   (:world-cup db)))
+
+(rf/reg-sub
+ :world-cup-fixtures
+ (fn [db _]
+   (get-in db [:world-cup :fixtures])))
+
+(rf/reg-sub
+ :world-cup-trivia
+ (fn [db _]
+   (get-in db [:world-cup :trivia])))
