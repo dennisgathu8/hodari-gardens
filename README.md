@@ -1,61 +1,61 @@
-# Hodari Gardens Resort: Digital Excellence 🏝️✨
+# Hodari Sports Gardens Resort: Production Platform 🏝️⚽✨
 
-[![CI](https://github.com/dennisgathu8/hodari-gardens/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/dennisgathu8/hodari-gardens/actions/workflows/ci.yml)
-[![Clojure](https://img.shields.io/badge/Clojure-1.11-blue.svg?logo=clojure&logoColor=white)](https://clojure.org/)
-[![ClojureScript](https://img.shields.io/badge/ClojureScript-1.11-blue.svg?logo=clojurescript&logoColor=white)](https://clojurescript.org/)
-[![React 18](https://img.shields.io/badge/React-18-61DAFB.svg?logo=react&logoColor=white)](https://react.dev/)
-[![Re-frame](https://img.shields.io/badge/re--frame-1.3.0-orange.svg)](https://day8.github.io/re-frame/)
-[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-3.4-38B2AC.svg?logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
-[![Security](https://img.shields.io/badge/Security-Hardened-green.svg)](SECURITY.md)
-[![Deployment](https://img.shields.io/badge/Deployment-Fly.io-purple.svg)](https://hodari-gardens.fly.dev/)
+[![CI Pipeline Status](https://github.com/dennisgathu8/hodari-gardens/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/dennisgathu8/hodari-gardens/actions/workflows/ci.yml)
+[![Clojure Version](https://img.shields.io/badge/Clojure-1.11-blue.svg?logo=clojure&logoColor=white)](https://clojure.org/)
+[![ClojureScript Version](https://img.shields.io/badge/ClojureScript-1.11-blue.svg?logo=clojurescript&logoColor=white)](https://clojurescript.org/)
+[![React Version](https://img.shields.io/badge/React-18-61DAFB.svg?logo=react&logoColor=white)](https://react.dev/)
+[![re-frame Version](https://img.shields.io/badge/re--frame-1.3.0-orange.svg)](https://day8.github.io/re-frame/)
+[![Tailwind CSS Version](https://img.shields.io/badge/Tailwind_CSS-3.4-38B2AC.svg?logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
+[![Security Grade](https://img.shields.io/badge/Security-Hardened-green.svg)](SECURITY.md)
+[![Production URL](https://img.shields.io/badge/Production-hodarisportsgardens.com-purple.svg)](https://hodarisportsgardens.com)
 
-A high-performance, reactive, and security-first digital platform for **Hodari Gardens Resort** in Nakuru, Kenya. 
+A high-performance, reactive, and security-hardened full-stack platform for **Hodari Sports Gardens Resort** in Nakuru, Kenya. Coordinated and engineered with strict functional programming principles.
 
-**🎉 Live Deployment:** [https://hodari-gardens.fly.dev/](https://hodari-gardens.fly.dev/)
-
-This is not just a website; it's a demonstration of the **unreasonable effectiveness** of Functional Programming (FP) in modern web engineering.
+**🌐 Secure Custom Domain:** [https://hodarisportsgardens.com](https://hodarisportsgardens.com)
 
 ---
 
-## ⚡ Why Clojure & ClojureScript?
+## ⚡ Technical Vision & Stack
 
-This platform leverages the unique power of the Lisp philosophy to achieve a level of craftsmanship and agility that 10x engineers demand:
+This platform leverages the **unreasonable effectiveness of Functional Programming** to build a modern, zero-maintenance guest experience platform.
 
-### 1. The Power of REPL-Driven Development
-We don't wait for "builds." With **Shadow-CLJS** and a connected REPL, we modify the running application with sub-millisecond feedback. Logic changes, design tweaks, and state migrations happen live—without lost session state.
-
-### 2. Immutability as a Superpower
-By treating data as immutable and pushing side effects to the "edges" (via **re-frame** interceptors), we eliminate entire classes of bugs related to shared mutable state. The result is a rock-solid UI that behaves predictably under heavy interaction.
-
-### 3. Data-Oriented Design
-Everything is data. Routes, configuration, UI components, and state are all expressed as plain Clojure maps and vectors (EDN). This makes the system profoundly introspectable and easy to refactor.
+*   **Core Language:** Clojure & ClojureScript for unified client-server language semantics.
+*   **State Architecture:** Single-source-of-truth app-db powered by **re-frame** (unidirectional data flow).
+*   **Routing System:** Dual-routing system using `reitit` on both backend (Ring API endpoints) and frontend (HTML5 push state).
+*   **Build Chain:** **Shadow-CLJS** compiling production assets with Advanced Compilation, coupled with Tailwind CSS JIT compilation.
+*   **Database Philosophy:** Zero-dependency, ultra-fast, read-optimized EDN (Extensible Data Notation) structures containing resort data, menus, and tournament fixtures.
 
 ---
 
-## 🏛 Architectural Excellence
+## 🏛 Systems & Security Architecture
 
-The system follows a pure functional, unidirectional data flow architecture.
+The application is structured as a pure, decoupled functional loop. 
 
 ```mermaid
 graph TD
-    subgraph "Data Layer (EDN)"
-        D[(Resources EDN)]
+    subgraph "Data Layer (EDN Resources)"
+        D[(world_cup.edn / drinks.edn)]
     end
 
-    subgraph "Backend (JVM / Clojure)"
-        S[Jetty Server]
-        R[Reitit Router]
+    subgraph "Hardened Backend (Jetty / Ring)"
+        S[Jetty Web Server]
+        MW[Security Middleware]
+        RL[Sliding Rate Limiter]
+        R[Reitit API Router]
         A[API Handlers]
-        S --> R
+        
+        S --> MW
+        MW --> RL
+        RL --> R
         R --> A
         A -.-> D
     end
 
-    subgraph "Frontend (JS / ClojureScript)"
-        V[Reagent Components]
-        SUB[Subscriptions]
-        E[Event Handlers]
-        DB[(App DB)]
+    subgraph "Frontend Dashboard (Reagent / re-frame)"
+        V[Reagent UI Components]
+        SUB[re-frame Subscriptions]
+        E[re-frame Event Dispatch]
+        DB[(re-frame app-db)]
         
         V --> E
         E --> DB
@@ -63,62 +63,58 @@ graph TD
         SUB --> V
     end
 
-    A <== "Protobuf-like EDN Transduction" ==> E
+    A <== "Strict EDN Payloads" ==> E
 ```
 
----
-
-## 🛡 Security Architecture
-
-Security is not a feature; it's an invariant.
-
-*   **Stateless Execution**: The backend maintains no session state, reducing the attack surface for session hijacking.
-*   **Malli-Strict Validation**: Every API request and response is validated against formal schemas (**Malli**), ensuring zero unexpected data reaches the core logic.
-*   **CSRF & XSS Hardening**: Leveraging Ring’s secure-site defaults and Reagent’s inherent protection against XSS by treating strings as text by default.
-*   **Atomic State Transitions**: Application state updates are atomic, preventing "torn" state or race conditions.
+### 🛡 Core Security Specifications
+*   **Custom CSP Rules:** Strict Content Security Policy allowing local assets, Google Fonts, and securely restricting embeds exclusively to verified Google Maps frames (`frame-src 'self' https://www.google.com`).
+*   **Brute-Force & DDoS Mitigation:** Built-in backend rate limiters executing a sliding-window algorithm for guest inquiries and booking endpoints.
+*   **HSTS & Modern TLS:** Enforced HTTP Strict Transport Security (`max-age=31536000; includeSubDomains; preload`) to guarantee secure communication.
+*   **Zero-State JVM Execution:** Fully stateless API layer allowing seamless vertical and horizontal scaling.
 
 ---
 
-## 🚀 Technical Highlights
+## 🚀 Production Optimization
 
-*   **React 18 Concurrent Rendering**: Optimized for fluid UI response even during heavy data transduction.
-*   **HSL Design Tokens**: A custom design system built with **Tailwind CSS**, optimized for both high-contrast luxury and low-light dark mode.
-*   **Zero-Dependency Persistence**: Rapid, high-performance data access using optimized EDN resource loading.
+*   **Garbage Collection Tuning:** Custom JRE 17 Alpine image running inside the Fly container, utilizing highly tuned **G1GC** parameters (`-XX:+UseG1GC`) to ensure sub-millisecond pauses.
+*   **Memory Safeguards:** JVM heap configured with `-Xms128m` and `-Xmx700m` limits to run safely within Fly's strict container quotas, protecting the app from Out Of Memory (OOM) termination.
+*   **Aggressive Caching:** Production static assets (`/js/` and `/css/`) are injected with immutable headers (`Cache-Control: public, max-age=31536000, immutable`), ensuring instantaneous page loads for return visitors.
 
 ---
 
-## 🛠 Developer Workflow (10x Standard)
+## 🛠 Production Operations & Development
 
-### Prerequisites
-- JDK 17+
-- Clojure CLI
-- Node.js 20+
+### Local Setup
+Ensure you have `JDK 17`, `Clojure CLI`, and `Node.js 20+` installed on your system.
 
-### Setup & Development
 ```bash
-# Install dependencies
+# 1. Install required packages
 npm install
 
-# Start development ecosystem
-npm run dev     # Shadows-CLJS (Frontend)
-npm run server  # Jetty (Backend)
+# 2. Compile CSS assets
+npm run css
+
+# 3. Start local development watch (shadow-cljs)
+npm run dev
+
+# 4. Start the Ring/Jetty backend server
+npm run server
 ```
 
-### Productivity Tools
+### Production Release Compilation
+To compile the minified release bundle and build the optimized production output:
 ```bash
-npm run lint    # Run Clj-Kondo static analysis
-npm run format  # Enforce idiomatic code style
-npm run build   # Production asset compilation
+npm run build
 ```
 
 ---
 
 ## 👨‍💻 Primary Creator
 
-Developed and Maintained with precision by **dennisgathu8**.
+Developed and maintained with pristine engineering by **dennisgathu8**.
 
-*   **GitHub**: [@dennisgathu8](https://github.com/dennisgathu8)
-*   **Project Site**: [hodarigardens.co.ke](https://hodarigardens.co.ke)
+*   **GitHub:** [@dennisgathu8](https://github.com/dennisgathu8)
+*   **Domain:** [https://hodarisportsgardens.com](https://hodarisportsgardens.com)
 
 ---
-Copyright © 2026 dennisgathu8. Built with FP excellence.
+Copyright © 2026 dennisgathu8. Engineered for functional excellence.
