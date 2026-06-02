@@ -1,8 +1,9 @@
-FROM clojure:temurin-17-tools-deps AS builder
+FROM node:20-alpine AS node-provider
 
-# Install Node.js for Shadow-CLJS
-RUN curl -fsSL https://deb.nodesource.com/setup_18.x | bash - && \
-    apt-get install -y nodejs
+FROM clojure:temurin-17-tools-deps AS builder
+COPY --from=node-provider /usr/local/bin/node /usr/local/bin/node
+COPY --from=node-provider /usr/local/lib/node_modules /usr/local/lib/node_modules
+COPY --from=node-provider /usr/local/bin/npm /usr/local/bin/npm
 
 WORKDIR /app
 
@@ -33,11 +34,17 @@ WORKDIR /app
 # Copy uberjar from builder
 COPY --from=builder /app/target/hodari-gardens-1.0.0.jar ./hodari-gardens.jar
 
-# Copy static assets
-COPY --from=builder /app/resources/public ./resources/public
+# Copy static assets and data files
+COPY --from=builder /app/resources ./resources
 
 EXPOSE 3000
 
 ENV PORT=3000
 
-CMD ["java", "-jar", "hodari-gardens.jar"]
+CMD ["java", \
+     "-Xms128m", \
+     "-Xmx700m", \
+     "-XX:+UseG1GC", \
+     "-XX:+ExitOnOutOfMemoryError", \
+     "-Dlog4j2.formatMsgNoLookups=true", \
+     "-jar", "hodari-gardens.jar"]
