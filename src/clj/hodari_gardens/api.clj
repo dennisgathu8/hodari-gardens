@@ -1,6 +1,6 @@
 (ns hodari-gardens.api
   "API handlers for Hodari Gardens Resort.
-   Provides endpoints for rooms, events, drinks, World Cup data, and bookings."
+   Provides endpoints for rooms, events, drinks, and bookings."
   (:require [clojure.edn :as edn]
             [clojure.java.io :as io]
             [ring.util.response :as response]))
@@ -18,8 +18,8 @@
 (def rooms-data (delay (load-edn-resource "rooms.edn")))
 (def events-data (delay (load-edn-resource "events.edn")))
 (def drinks-data (delay (load-edn-resource "drinks.edn")))
-(def worldcup-data (delay (load-edn-resource "worldcup.edn")))
 (def contact-data (delay (load-edn-resource "contact.edn")))
+(def world-cup-data (delay (load-edn-resource "world_cup.edn")))
 
 ;; Room endpoints
 (defn get-rooms
@@ -63,28 +63,16 @@
   [_request]
   (response/response @drinks-data))
 
-;; World Cup endpoints
-(defn get-worldcup-data
-  "Return complete World Cup data including tournament info and packages."
-  [_request]
-  (response/response @worldcup-data))
-
-(defn get-matches
-  "Return World Cup matches, optionally filtered by stage or date."
-  [request]
-  (let [stage (get-in request [:query-params "stage"])
-        date (get-in request [:query-params "date"])
-        matches (:matches @worldcup-data)
-        filtered-matches (cond->> matches
-                           stage (filter #(= (name (:stage %)) stage))
-                           date (filter #(= (:date %) date)))]
-    (response/response {:matches filtered-matches})))
-
 ;; Contact endpoint
 (defn get-contact-info
   "Return contact information and location details."
   [_request]
   (response/response @contact-data))
+
+(defn get-world-cup-data
+  "Return World Cup fixtures and trivia."
+  [_request]
+  (response/response @world-cup-data))
 
 ;; Booking endpoints (mock implementations - log to console)
 (defn submit-booking
