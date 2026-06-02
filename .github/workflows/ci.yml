@@ -1,0 +1,59 @@
+name: CI
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build-and-test:
+    name: Build and test
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Java 17
+        uses: actions/setup-java@v4
+        with:
+          java-version: '17'
+          distribution: 'temurin'
+
+      - name: Set up Node 20
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install Clojure CLI
+        uses: DeLaGuardo/setup-clojure@12
+        with:
+          cli: '1.12.4.1602'
+
+      - name: Cache Clojure deps
+        uses: actions/cache@v4
+        with:
+          path: |
+            ~/.m2/repository
+            ~/.gitlibs
+            ~/.deps.clj
+          key: ${{ runner.os }}-deps-${{ hashFiles('deps.edn') }}
+          restore-keys: |
+            ${{ runner.os }}-deps-
+
+      - name: Install npm dependencies
+        run: npm ci
+
+      - name: Lint (clj-kondo)
+        run: clojure -M:lint
+
+      - name: Run tests
+        run: clj -M:test
+
+      - name: Build frontend (verify compilation)
+        run: npm run build
+
+      - name: Audit npm dependencies
+        run: npm audit --audit-level=high

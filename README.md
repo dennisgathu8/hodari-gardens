@@ -1,5 +1,6 @@
 # Hodari Gardens Resort: Digital Excellence 🏝️✨
 
+[![CI](https://github.com/dennisgathu8/hodari-gardens/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/dennisgathu8/hodari-gardens/actions/workflows/ci.yml)
 [![Clojure](https://img.shields.io/badge/Clojure-1.11-blue.svg?logo=clojure&logoColor=white)](https://clojure.org/)
 [![ClojureScript](https://img.shields.io/badge/ClojureScript-1.11-blue.svg?logo=clojurescript&logoColor=white)](https://clojurescript.org/)
 [![React 18](https://img.shields.io/badge/React-18-61DAFB.svg?logo=react&logoColor=white)](https://react.dev/)
