@@ -39,7 +39,8 @@
                        org.slf4j/slf4j-nop {:mvn/version "2.0.7"}}
           :main-opts ["-m" "kaocha.runner"]}
 
-  :lint {:extra-deps {clj-kondo/clj-kondo {:mvn/version "2023.10.20"}}}
+   :lint {:extra-deps {clj-kondo/clj-kondo {:mvn/version "2023.10.20"}}
+          :main-opts ["-m" "clj-kondo.main" "--lint" "src/clj" "src/cljs" "test"]}
 
   :format {:extra-deps {mvxcvi/cljstyle {:mvn/version "0.15.0"}}}
 

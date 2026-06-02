@@ -50,7 +50,7 @@ jobs:
         run: clojure -M:lint
 
       - name: Run tests
-        run: clj -M:test
+        run: clojure -M:test
 
       - name: Build frontend (verify compilation)
         run: npm run build
